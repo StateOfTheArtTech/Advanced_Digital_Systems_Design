@@ -1,0 +1,274 @@
+module mux_2_1(s, x, y, m);
+    input s;
+    input x;
+    input y;
+    output m;
+    
+    assign m = (~s & x) | (s & y);
+endmodule
+
+module mux_5_1(u, v, w, x, y, s, m);
+	input u;
+	input v;
+	input w;
+	input x;
+	input y;
+	input [2:0]s;
+	output m;
+	wire m0;
+	wire m1;
+	wire m2;
+	wire m3;
+	
+	mux_2_1 mux0(
+		.s(s[0]),
+		.x(u),
+		.y(v),
+		.m(m0)
+	);
+	mux_2_1 mux1(
+		.s(s[0]),
+		.x(w),
+		.y(x),
+		.m(m1)
+	);
+	
+	mux_2_1 mux2(
+		.s(s[1]),
+		.x(m0),
+		.y(m1),
+		.m(m2)
+	);
+	
+	mux_2_1 mux3(
+		.s(s[2]),
+		.x(m2),
+		.y(y),
+		.m(m3)
+	);
+	
+	assign m = m3;
+
+endmodule
+
+module mux_8_1(
+    input u,
+    input v,
+    input w,
+    input x,
+    input y,
+    input z,
+    input a,
+    input b,
+    input [2:0] s,
+    output m
+);
+    wire m0, m1, m2, m3;
+    wire m4, m5;
+
+    mux_2_1 mux0 (
+        .s(s[0]),
+        .x(u),
+        .y(v),
+        .m(m0)
+    );
+
+    mux_2_1 mux1 (
+        .s(s[0]),
+        .x(w),
+        .y(x),
+        .m(m1)
+    );
+
+    mux_2_1 mux2 (
+        .s(s[0]),
+        .x(y),
+        .y(z),
+        .m(m2)
+    );
+
+    mux_2_1 mux3 (
+        .s(s[0]),
+        .x(a),
+        .y(b),
+        .m(m3)
+    );
+
+    mux_2_1 mux4 (
+        .s(s[1]),
+        .x(m0),
+        .y(m1),
+        .m(m4)
+    );
+
+    mux_2_1 mux5 (
+        .s(s[1]),
+        .x(m2),
+        .y(m3),
+        .m(m5)
+    );
+
+    mux_2_1 mux6 (
+        .s(s[2]),
+        .x(m4),
+        .y(m5),
+        .m(m)
+    );
+
+endmodule
+
+module mux_3bit_5to1(
+    input [2:0] s,
+    input [2:0] u,
+    input [2:0] v,
+    input [2:0] w,
+    input [2:0] x,
+    input [2:0] y,
+    output [2:0] m
+);
+    mux_5_1 mux2 (
+		 .u(u[2]), 
+		 .v(v[2]), 
+		 .w(w[2]), 
+		 .x(x[2]), 
+		 .y(y[2]), 
+		 .s(s), 
+		 .m(m[2])
+	 );
+	 
+	mux_5_1 mux1 (
+		.u(u[1]), 
+		.v(v[1]), 
+		.w(w[1]), 
+		.x(x[1]), 
+		.y(y[1]), 
+		.s(s), 
+		.m(m[1])
+	);
+	
+   mux_5_1 mux0 (
+		.u(u[0]), 
+		.v(v[0]), 
+		.w(w[0]), 
+		.x(x[0]), 
+		.y(y[0]), 
+		.s(s), 
+		.m(m[0])
+	);
+	
+endmodule
+
+module mux_3bit_8to1(
+    input [2:0] s,
+    input [2:0] u,
+    input [2:0] v,
+    input [2:0] w,
+    input [2:0] x,
+    input [2:0] y,
+    input [2:0] z,
+    input [2:0] a,
+    input [2:0] b,
+    output [2:0] m
+);
+    mux_8_1 mux2 (
+        .u(u[2]),
+        .v(v[2]),
+        .w(w[2]),
+        .x(x[2]),
+        .y(y[2]),
+        .z(z[2]),
+        .a(a[2]),
+        .b(b[2]),
+        .s(s),
+        .m(m[2])
+    );
+
+    mux_8_1 mux1 (
+        .u(u[1]),
+        .v(v[1]),
+        .w(w[1]),
+        .x(x[1]),
+        .y(y[1]),
+        .z(z[1]),
+        .a(a[1]),
+        .b(b[1]),
+        .s(s),
+        .m(m[1])
+    );
+
+    mux_8_1 mux0 (
+        .u(u[0]),
+        .v(v[0]),
+        .w(w[0]),
+        .x(x[0]),
+        .y(y[0]),
+        .z(z[0]),
+        .a(a[0]),
+        .b(b[0]),
+        .s(s),
+        .m(m[0])
+    );
+
+endmodule
+
+
+module dec_7seg(in, out);
+   input [2:0] in;
+   output reg [6:0] out;
+
+	always @(*) begin
+		case (in)
+			3'b000: out = 7'b0001001;
+			3'b001: out = 7'b0000110;
+			3'b010: out = 7'b1000111;
+			3'b011: out = 7'b1000000;
+			default: out = 7'b1111111;
+		endcase
+	end
+endmodule
+	
+module Lab_2(
+    input [9:0] SW,
+    output [9:0] LEDR,
+    output [6:0] HEX0,
+    output [6:0] HEX1,
+    output [6:0] HEX2,
+    output [6:0] HEX3,
+    output [6:0] HEX4,
+    output [6:0] HEX5
+);
+    wire [2:0] H;
+    wire [2:0] E;
+    wire [2:0] L;
+    wire [2:0] O;
+    wire [2:0] B; 
+
+    assign H = SW[5:3];
+    assign E = SW[5:3];
+    assign L = SW[5:3];
+    assign O = SW[5:3];
+    assign B = SW[2:0];//3'b100;
+
+    wire [2:0] m5, m4, m3, m2, m1, m0;
+
+    
+    mux_3bit_8to1 MUX5 (SW[9:7], B, B, H, E, L, L, O, B, m5);
+    mux_3bit_8to1 MUX4 (SW[9:7], B, H, E, L, L, O, B, B, m4);
+    mux_3bit_8to1 MUX3 (SW[9:7], H, E, L, L, O, B, B, B, m3);
+    mux_3bit_8to1 MUX2 (SW[9:7], E, L, L, O, B, B, B, H, m2);
+    mux_3bit_8to1 MUX1 (SW[9:7], L, L, O, B, B, B, H, E, m1);
+    mux_3bit_8to1 MUX0 (SW[9:7], L, O, B, B, B, H, E, L, m0);
+
+    dec_7seg D5 (m5, HEX5);
+    dec_7seg D4 (m4, HEX4);
+    dec_7seg D3 (m3, HEX3);
+    dec_7seg D2 (m2, HEX2);
+    dec_7seg D1 (m1, HEX1);
+    dec_7seg D0 (m0, HEX0);
+
+    assign LEDR = SW;
+
+endmodule
+
+
+
