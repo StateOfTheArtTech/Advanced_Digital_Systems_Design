@@ -1,0 +1,3 @@
+module HW_2(input a, output b);
+
+endmodule
