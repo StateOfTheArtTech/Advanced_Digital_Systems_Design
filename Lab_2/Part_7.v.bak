@@ -1,0 +1,22 @@
+module Part_7(
+   input wire [5:0] SW,
+   output wire [7:0] LEDR,
+   output wire [7:0] HEX0,
+   output wire [7:0] HEX1
+);
+   assign LEDR[5:0] = SW[5:0];
+   assign LEDR[7:6] = 2'b0;
+
+   wire [3:0] tens = SW / 4'd10;
+   wire [3:0] units = SW % 4'd10;
+
+   Seg7_Decoder dec_units(
+      .m(units),
+      .out(HEX0)
+   );
+
+   Seg7_Decoder dec_tens(
+      .m(tens),
+      .out(HEX1)
+   );
+endmodule

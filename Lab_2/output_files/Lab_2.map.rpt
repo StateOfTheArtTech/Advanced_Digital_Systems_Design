@@ -1,5 +1,5 @@
-Analysis & Elaboration report for Lab_2
-Tue Sep 15 10:08:52 2026
+Analysis & Synthesis report for Lab_2
+Tue Sep 22 02:17:38 2026
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -7,10 +7,17 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "Part_6:u_part6|Seg7_Decoder:dec_s2"
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -35,45 +42,29 @@ https://fpgasoftware.intel.com/eula.
 
 
 +-------------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                      ;
+; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Tue Sep 15 10:08:52 2026          ;
+; Analysis & Synthesis Status        ; Successful - Tue Sep 22 02:17:38 2026          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Lab_2                                          ;
 ; Top-level Entity Name              ; Lab_2                                          ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
-; UFM blocks                         ; N/A until Partition Merge                      ;
-; ADC blocks                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 33                                             ;
+;     Total combinational functions  ; 33                                             ;
+;     Dedicated logic registers      ; 0                                              ;
+; Total registers                    ; 0                                              ;
+; Total pins                         ; 69                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
+; UFM blocks                         ; 0                                              ;
+; ADC blocks                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 8           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
 +------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                            ;
+; Analysis & Synthesis Settings                                                                              ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
@@ -158,29 +149,220 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+; Seg7_Decoder.v                   ; yes             ; User Verilog HDL File  ; C:/Advanced_Digital_Systems_Design/Lab_2/Seg7_Decoder.v ;         ;
+; Lab_2.v                          ; yes             ; User Verilog HDL File  ; C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v        ;         ;
+; Part_6.v                         ; yes             ; User Verilog HDL File  ; C:/Advanced_Digital_Systems_Design/Lab_2/Part_6.v       ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                          ;
++---------------------------------------------+------------------------+
+; Resource                                    ; Usage                  ;
++---------------------------------------------+------------------------+
+; Estimated Total logic elements              ; 33                     ;
+;                                             ;                        ;
+; Total combinational functions               ; 33                     ;
+; Logic element usage by number of LUT inputs ;                        ;
+;     -- 4 input functions                    ; 18                     ;
+;     -- 3 input functions                    ; 13                     ;
+;     -- <=2 input functions                  ; 2                      ;
+;                                             ;                        ;
+; Logic elements by mode                      ;                        ;
+;     -- normal mode                          ; 24                     ;
+;     -- arithmetic mode                      ; 9                      ;
+;                                             ;                        ;
+; Total registers                             ; 0                      ;
+;     -- Dedicated logic registers            ; 0                      ;
+;     -- I/O registers                        ; 0                      ;
+;                                             ;                        ;
+; I/O pins                                    ; 69                     ;
+;                                             ;                        ;
+; Embedded Multiplier 9-bit elements          ; 0                      ;
+;                                             ;                        ;
+; Maximum fan-out node                        ; Part_6:u_part6|S0[0]~0 ;
+; Maximum fan-out                             ; 8                      ;
+; Total fan-out                               ; 206                    ;
+; Average fan-out                             ; 1.20                   ;
++---------------------------------------------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                        ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------+--------------+--------------+
+; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                       ; Entity Name  ; Library Name ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------+--------------+--------------+
+; |Lab_2                      ; 33 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 69   ; 0            ; 0          ; |Lab_2                                    ; Lab_2        ; work         ;
+;    |Part_6:u_part6|         ; 33 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_2|Part_6:u_part6                     ; Part_6       ; work         ;
+;       |Seg7_Decoder:dec_s0| ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_2|Part_6:u_part6|Seg7_Decoder:dec_s0 ; Seg7_Decoder ; work         ;
+;       |Seg7_Decoder:dec_s1| ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_2|Part_6:u_part6|Seg7_Decoder:dec_s1 ; Seg7_Decoder ; work         ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "Part_6:u_part6|Seg7_Decoder:dec_s2" ;
++---------+-------+----------+-----------------------------------+
+; Port    ; Type  ; Severity ; Details                           ;
++---------+-------+----------+-----------------------------------+
+; m[3..1] ; Input ; Info     ; Stuck at GND                      ;
++---------+-------+----------+-----------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 69                          ;
+; cycloneiii_lcell_comb ; 39                          ;
+;     arith             ; 9                           ;
+;         3 data inputs ; 9                           ;
+;     normal            ; 30                          ;
+;         0 data inputs ; 4                           ;
+;         1 data inputs ; 4                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 18                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.80                        ;
+; Average LUT depth     ; 5.68                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Tue Sep 15 10:08:47 2026
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab_2 -c Lab_2 --analysis_and_elaboration
+    Info: Processing started: Tue Sep 22 02:17:32 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab_2 -c Lab_2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
-Info (12021): Found 7 design units, including 7 entities, in source file lab_2.v
-    Info (12023): Found entity 1: mux_2_1 File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 1
-    Info (12023): Found entity 2: mux_5_1 File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 10
-    Info (12023): Found entity 3: mux_8_1 File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 54
-    Info (12023): Found entity 4: mux_3bit_5to1 File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 120
-    Info (12023): Found entity 5: mux_3bit_8to1 File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 161
-    Info (12023): Found entity 6: dec_7seg File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 215
-    Info (12023): Found entity 7: Lab_2 File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 230
+Info (12021): Found 1 design units, including 1 entities, in source file part_2.v
+    Info (12023): Found entity 1: Part_2 File: C:/Advanced_Digital_Systems_Design/Lab_2/Part_2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file seg7_decoder.v
+    Info (12023): Found entity 1: Seg7_Decoder File: C:/Advanced_Digital_Systems_Design/Lab_2/Seg7_Decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2_1.v
+    Info (12023): Found entity 1: mux_2_1 File: C:/Advanced_Digital_Systems_Design/Lab_2/mux_2_1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comparator.v
+    Info (12023): Found entity 1: Comparator File: C:/Advanced_Digital_Systems_Design/Lab_2/Comparator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file circuitb.v
+    Info (12023): Found entity 1: CircuitB File: C:/Advanced_Digital_Systems_Design/Lab_2/CircuitB.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file circuita.v
+    Info (12023): Found entity 1: CircuitA File: C:/Advanced_Digital_Systems_Design/Lab_2/CircuitA.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lab_2.v
+    Info (12023): Found entity 1: Lab_2 File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file part_1.v
+    Info (12023): Found entity 1: Part_1 File: C:/Advanced_Digital_Systems_Design/Lab_2/Part_1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file part_3.v
+    Info (12023): Found entity 1: Part_3 File: C:/Advanced_Digital_Systems_Design/Lab_2/Part_3.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file full_adder.v
+    Info (12023): Found entity 1: full_adder File: C:/Advanced_Digital_Systems_Design/Lab_2/full_adder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file part_4.v
+    Info (12023): Found entity 1: Part_4 File: C:/Advanced_Digital_Systems_Design/Lab_2/Part_4.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file adder_4bit.v
+    Info (12023): Found entity 1: adder_4bit File: C:/Advanced_Digital_Systems_Design/Lab_2/adder_4bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_comperator.v
+    Info (12023): Found entity 1: bcd_comperator File: C:/Advanced_Digital_Systems_Design/Lab_2/bcd_comperator.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_4bit_2_1.v
+    Info (12023): Found entity 1: mux_4bit_2_1 File: C:/Advanced_Digital_Systems_Design/Lab_2/mux_4bit_2_1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_4bit_adder.v
+    Info (12023): Found entity 1: bcd_4bit_adder File: C:/Advanced_Digital_Systems_Design/Lab_2/bcd_4bit_adder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file part_5.v
+    Info (12023): Found entity 1: Part_5 File: C:/Advanced_Digital_Systems_Design/Lab_2/Part_5.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file part_6.v
+    Info (12023): Found entity 1: Part_6 File: C:/Advanced_Digital_Systems_Design/Lab_2/Part_6.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file part_7.v
+    Info (12023): Found entity 1: Part_7 File: C:/Advanced_Digital_Systems_Design/Lab_2/Part_7.v Line: 1
 Info (12127): Elaborating entity "Lab_2" for the top level hierarchy
-Info (12128): Elaborating entity "mux_3bit_8to1" for hierarchy "mux_3bit_8to1:MUX5" File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 255
-Info (12128): Elaborating entity "mux_8_1" for hierarchy "mux_3bit_8to1:MUX5|mux_8_1:mux2" File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 184
-Info (12128): Elaborating entity "mux_2_1" for hierarchy "mux_3bit_8to1:MUX5|mux_8_1:mux2|mux_2_1:mux0" File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 74
-Info (12128): Elaborating entity "dec_7seg" for hierarchy "dec_7seg:D5" File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 262
+Warning (10034): Output port "LEDR[9..8]" at Lab_2.v(3) has no driver File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 3
+Warning (10034): Output port "HEX3" at Lab_2.v(8) has no driver File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 8
+Warning (10034): Output port "HEX4" at Lab_2.v(9) has no driver File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 9
+Warning (10034): Output port "HEX5" at Lab_2.v(11) has no driver File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 11
+Info (12128): Elaborating entity "Part_6" for hierarchy "Part_6:u_part6" File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 62
+Warning (10230): Verilog HDL assignment warning at Part_6.v(30): truncated value with size 5 to match size of target (4) File: C:/Advanced_Digital_Systems_Design/Lab_2/Part_6.v Line: 30
+Warning (10230): Verilog HDL assignment warning at Part_6.v(39): truncated value with size 5 to match size of target (4) File: C:/Advanced_Digital_Systems_Design/Lab_2/Part_6.v Line: 39
+Info (12128): Elaborating entity "Seg7_Decoder" for hierarchy "Part_6:u_part6|Seg7_Decoder:dec_s0" File: C:/Advanced_Digital_Systems_Design/Lab_2/Part_6.v Line: 48
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 3
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 3
+    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 5
+    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 6
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 7
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 7
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 7
+    Warning (13410): Pin "HEX2[7]" is stuck at VCC File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 7
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 8
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 8
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 8
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 8
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 8
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 8
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 8
+    Warning (13410): Pin "HEX3[7]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 8
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 9
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 9
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 9
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 9
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 9
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 9
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 9
+    Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 9
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 11
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 11
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 11
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 11
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 11
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 11
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 11
+    Warning (13410): Pin "HEX5[7]" is stuck at GND File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 11
+Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 209 assignments for entity "DE10_LITE_Golden_Top" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CLK_10 -entity DE10_LITE_Golden_Top was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[0] -entity DE10_LITE_Golden_Top was ignored
@@ -391,10 +573,20 @@ Warning (20013): Ignored 209 assignments for entity "DE10_LITE_Golden_Top" -- en
     Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE10_LITE_Golden_Top -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE10_LITE_Golden_Top -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE10_LITE_Golden_Top -section_id Top was ignored
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 211 warnings
-    Info: Peak virtual memory: 4732 megabytes
-    Info: Processing ended: Tue Sep 15 10:08:52 2026
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:11
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 2
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 2
+    Warning (15610): No output dependent on input pin "MAX10_CLK1_50" File: C:/Advanced_Digital_Systems_Design/Lab_2/Lab_2.v Line: 4
+Info (21057): Implemented 102 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 58 output pins
+    Info (21061): Implemented 33 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 254 warnings
+    Info: Peak virtual memory: 4787 megabytes
+    Info: Processing ended: Tue Sep 22 02:17:38 2026
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:12
 
 
