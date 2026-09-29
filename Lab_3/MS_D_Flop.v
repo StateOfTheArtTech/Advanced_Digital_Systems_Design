@@ -1,0 +1,11 @@
+module MS_D_Flop(
+	Clk, D, Q
+);
+	input Clk, D;
+	output Q;
+	wire Qm;
+	
+	D_Latch dl1(.Clk(~Clk), .D(D), .Q(Qm));
+	D_Latch dl2(.Clk(Clk), .D(Qm), .Q(Q));
+	
+endmodule

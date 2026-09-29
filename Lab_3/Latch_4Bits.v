@@ -1,0 +1,25 @@
+module Latch_4Bits (
+	input wire En,
+	input wire [3:0] in,
+	output wire [3:0] out
+);
+	
+	gated_D_latch l0(
+		.Clk(En), .D(in[0]), .Q(out[0])
+	);
+	
+	gated_D_latch l1(
+		.Clk(En), .D(in[1]), .Q(out[1])
+	);
+	
+	gated_D_latch l2(
+		.Clk(En), .D(in[2]), .Q(out[2])
+	);
+	
+	gated_D_latch l3(
+		.Clk(En), .D(in[3]), .Q(out[3])
+	);
+	
+endmodule
+
+

@@ -1,0 +1,43 @@
+module D3_Latch(
+	Clk, D, Qa, Qb, Qc
+);
+	input Clk, D;
+	output Qa, Qb, Qc;
+	
+	gated_D_latch	gdl(.Clk(Clk), .D(D), .Q(Qa));
+	posedge_D_Latch pdl(.Clk(Clk), .D(D), .Q(Qb));
+	negedge_D_Latch ndl(.Clk(Clk), .D(D), .Q(Qc));
+endmodule
+
+module negedge_D_Latch(
+	Clk, D, Q
+);
+	input D, Clk;
+	output reg Q;
+	always @ (negedge Clk) begin
+		Q <= D;
+	end
+endmodule
+
+module posedge_D_Latch(
+	Clk, D, Q
+);
+	input D, Clk;
+	output reg Q;
+	always @ (posedge Clk) begin
+		Q <= D;
+	end
+endmodule
+
+module gated_D_latch(
+	Clk, D, Q
+);
+	input D, Clk;
+	output reg Q;
+	always @ (D, Clk) begin
+		if (Clk) begin
+			Q <= D;
+		end
+	end
+endmodule
+
