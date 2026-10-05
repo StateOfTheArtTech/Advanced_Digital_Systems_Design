@@ -1,0 +1,67 @@
+module FlipFlop_8Bit(
+	input T0,
+	input Clk,
+	input Clear,
+	output Qt7
+);
+	wire Qt0, Qt1, Qt2, Qt3, Qt4, Qt5, Qt6;
+	wire T1, T2, T3, T4, T5, T6, T7;
+	always @ (posedge Clk) begin
+		T_FlipFlop TFF0(	
+			.T(T0),
+			.Clk(Clk),
+			.Clear(Clear),
+			output Qt0
+		);
+		and and0 (T1, QT0, T0);
+		T_FlipFlop TFF1(	
+			.T(T1),
+			.Clk(Clk),
+			.Clear(Clear),
+			output Qt1
+		);
+		and and1 (T2, QT1, T1);
+		T_FlipFlop TFF2(	
+			.T(T2),
+			.Clk(Clk),
+			.Clear(Clear),
+			output Qt2
+		);
+		and and2 (T3, QT2, T2);
+		T_FlipFlop TFF3(	
+			.T(T3),
+			.Clk(Clk),
+			.Clear(Clear),
+			output Qt3
+		);
+		and and3 (T4, QT3, T3);
+		T_FlipFlop TFF4(	
+			.T(T4),
+			.Clk(Clk),
+			.Clear(Clear),
+			output Qt4
+		);
+		and and4 (T5, QT4, T4);
+		T_FlipFlop TFF5(	
+			.T(T5),
+			.Clk(Clk),
+			.Clear(Clear),
+			output Qt5
+		);
+		and and5 (T6, QT5, T5);
+		T_FlipFlop TFF6(	
+			.T(T6),
+			.Clk(Clk),
+			.Clear(Clear),
+			output Qt6
+		);
+		and and6 (T7, QT6, T6);
+		T_FlipFlop TFF7(	
+			.T(T7),
+			.Clk(Clk),
+			.Clear(Clear),
+			output Qt7
+		);
+	end
+	
+endmodule

@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at lfsr_n.v(7): always construct contains both blocking and non-blocking assignments File: C:/Advanced_Digital_Systems_Design/HW_4/lfsr_n.v Line: 7
