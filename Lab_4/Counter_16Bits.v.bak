@@ -1,0 +1,12 @@
+module Counter_16Bits(	
+	input Clk,
+	input Clear,
+	output reg [15:0] Q
+);
+	always @ (posedge Clk) begin
+		if(Clear)
+			Q <= 0;
+		else
+			Q <= Q + 1;
+	end
+endmodule

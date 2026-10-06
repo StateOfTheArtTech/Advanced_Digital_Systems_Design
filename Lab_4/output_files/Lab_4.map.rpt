@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab_4
-Tue Sep 29 10:36:51 2026
+Tue Oct  6 00:45:55 2026
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -13,10 +13,12 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Analysis & Synthesis IP Cores Summary
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: lpm_counter:LPM_COUNTER_component
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -43,15 +45,15 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Sep 29 10:36:51 2026          ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct  6 00:45:55 2026          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Lab_4                                          ;
-; Top-level Entity Name              ; Lab_4                                          ;
+; Top-level Entity Name              ; LPM_Counter_16Bits                             ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 27                                             ;
-;     Total combinational functions  ; 27                                             ;
-;     Dedicated logic registers      ; 8                                              ;
-; Total registers                    ; 8                                              ;
+; Total logic elements               ; 18                                             ;
+;     Total combinational functions  ; 18                                             ;
+;     Dedicated logic registers      ; 16                                             ;
+; Total registers                    ; 16                                             ;
 ; Total pins                         ; 19                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
@@ -68,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; 10M50DAF484C7G     ;                    ;
-; Top-level entity name                                            ; Lab_4              ; Lab_4              ;
+; Top-level entity name                                            ; LPM_Counter_16Bits ; Lab_4              ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -165,69 +167,77 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                              ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                ; Library ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
-; Lab_4.v                          ; yes             ; User Verilog HDL File  ; C:/Advanced_Digital_Systems_Design/Lab_4/Lab_4.v            ;         ;
-; T_FlipFlop.v                     ; yes             ; User Verilog HDL File  ; C:/Advanced_Digital_Systems_Design/Lab_4/T_FlipFlop.v       ;         ;
-; T_FlipFlop_8Bits.v               ; yes             ; User Verilog HDL File  ; C:/Advanced_Digital_Systems_Design/Lab_4/T_FlipFlop_8Bits.v ;         ;
-; Seg7_Decoder.v                   ; yes             ; User Verilog HDL File  ; C:/Advanced_Digital_Systems_Design/Lab_4/Seg7_Decoder.v     ;         ;
-+----------------------------------+-----------------+------------------------+-------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; LPM_Counter_16Bits.v             ; yes             ; User Wizard-Generated File   ; C:/Advanced_Digital_Systems_Design/Lab_4/LPM_Counter_16Bits.v                     ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_counter.tdf         ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_constant.inc        ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_decode.inc          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/cmpconst.inc            ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_compare.inc         ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_counter.inc         ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/dffeea.inc              ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/alt_counter_stratix.inc ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/aglobal231.inc          ;         ;
+; db/cntr_u8i.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Advanced_Digital_Systems_Design/Lab_4/db/cntr_u8i.tdf                          ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                 ;
-+---------------------------------------------+-----------------------------------------------+
-; Resource                                    ; Usage                                         ;
-+---------------------------------------------+-----------------------------------------------+
-; Estimated Total logic elements              ; 27                                            ;
-;                                             ;                                               ;
-; Total combinational functions               ; 27                                            ;
-; Logic element usage by number of LUT inputs ;                                               ;
-;     -- 4 input functions                    ; 22                                            ;
-;     -- 3 input functions                    ; 3                                             ;
-;     -- <=2 input functions                  ; 2                                             ;
-;                                             ;                                               ;
-; Logic elements by mode                      ;                                               ;
-;     -- normal mode                          ; 27                                            ;
-;     -- arithmetic mode                      ; 0                                             ;
-;                                             ;                                               ;
-; Total registers                             ; 8                                             ;
-;     -- Dedicated logic registers            ; 8                                             ;
-;     -- I/O registers                        ; 0                                             ;
-;                                             ;                                               ;
-; I/O pins                                    ; 19                                            ;
-;                                             ;                                               ;
-; Embedded Multiplier 9-bit elements          ; 0                                             ;
-;                                             ;                                               ;
-; Maximum fan-out node                        ; T_FlipFlop_8Bits:my_counter|T_FlipFlop:TFF3|q ;
-; Maximum fan-out                             ; 12                                            ;
-; Total fan-out                               ; 150                                           ;
-; Average fan-out                             ; 2.05                                          ;
-+---------------------------------------------+-----------------------------------------------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 18         ;
+;                                             ;            ;
+; Total combinational functions               ; 18         ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 0          ;
+;     -- 3 input functions                    ; 0          ;
+;     -- <=2 input functions                  ; 18         ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 3          ;
+;     -- arithmetic mode                      ; 15         ;
+;                                             ;            ;
+; Total registers                             ; 16         ;
+;     -- Dedicated logic registers            ; 16         ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 19         ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; sclr~input ;
+; Maximum fan-out                             ; 17         ;
+; Total fan-out                               ; 148        ;
+; Average fan-out                             ; 2.06       ;
++---------------------------------------------+------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                          ;
-+----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------+------------------+--------------+
-; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                ; Entity Name      ; Library Name ;
-+----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------+------------------+--------------+
-; |Lab_4                           ; 27 (0)              ; 8 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 19   ; 0            ; 0          ; |Lab_4                                             ; Lab_4            ; work         ;
-;    |Seg7_Decoder:comb_4|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_4|Seg7_Decoder:comb_4                         ; Seg7_Decoder     ; work         ;
-;    |Seg7_Decoder:comb_5|         ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_4|Seg7_Decoder:comb_5                         ; Seg7_Decoder     ; work         ;
-;    |T_FlipFlop_8Bits:my_counter| ; 13 (2)              ; 8 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_4|T_FlipFlop_8Bits:my_counter                 ; T_FlipFlop_8Bits ; work         ;
-;       |T_FlipFlop:TFF0|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_4|T_FlipFlop_8Bits:my_counter|T_FlipFlop:TFF0 ; T_FlipFlop       ; work         ;
-;       |T_FlipFlop:TFF1|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_4|T_FlipFlop_8Bits:my_counter|T_FlipFlop:TFF1 ; T_FlipFlop       ; work         ;
-;       |T_FlipFlop:TFF2|          ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_4|T_FlipFlop_8Bits:my_counter|T_FlipFlop:TFF2 ; T_FlipFlop       ; work         ;
-;       |T_FlipFlop:TFF3|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_4|T_FlipFlop_8Bits:my_counter|T_FlipFlop:TFF3 ; T_FlipFlop       ; work         ;
-;       |T_FlipFlop:TFF4|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_4|T_FlipFlop_8Bits:my_counter|T_FlipFlop:TFF4 ; T_FlipFlop       ; work         ;
-;       |T_FlipFlop:TFF5|          ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_4|T_FlipFlop_8Bits:my_counter|T_FlipFlop:TFF5 ; T_FlipFlop       ; work         ;
-;       |T_FlipFlop:TFF6|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_4|T_FlipFlop_8Bits:my_counter|T_FlipFlop:TFF6 ; T_FlipFlop       ; work         ;
-;       |T_FlipFlop:TFF7|          ; 2 (2)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_4|T_FlipFlop_8Bits:my_counter|T_FlipFlop:TFF7 ; T_FlipFlop       ; work         ;
-+----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------+------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                             ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                           ; Entity Name        ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------+--------------------+--------------+
+; |LPM_Counter_16Bits                    ; 18 (1)              ; 16 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 19   ; 0            ; 0          ; |LPM_Counter_16Bits                                                           ; LPM_Counter_16Bits ; work         ;
+;    |lpm_counter:LPM_COUNTER_component| ; 17 (0)              ; 16 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LPM_Counter_16Bits|lpm_counter:LPM_COUNTER_component                         ; lpm_counter        ; work         ;
+;       |cntr_u8i:auto_generated|        ; 17 (17)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LPM_Counter_16Bits|lpm_counter:LPM_COUNTER_component|cntr_u8i:auto_generated ; cntr_u8i           ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                      ;
++--------+--------------+---------+--------------+--------------+---------------------+----------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance     ; IP Include File      ;
++--------+--------------+---------+--------------+--------------+---------------------+----------------------+
+; Altera ; LPM_COUNTER  ; 23.1    ; N/A          ; N/A          ; |LPM_Counter_16Bits ; LPM_Counter_16Bits.v ;
++--------+--------------+---------+--------------+--------------+---------------------+----------------------+
 
 
 +------------------------------------------------------+
@@ -235,14 +245,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 8     ;
+; Total registers                              ; 16    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 16    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 16    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_counter:LPM_COUNTER_component ;
++------------------------+-------------+-----------------------------------------+
+; Parameter Name         ; Value       ; Type                                    ;
++------------------------+-------------+-----------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                          ;
+; LPM_WIDTH              ; 16          ; Signed Integer                          ;
+; LPM_DIRECTION          ; UP          ; Untyped                                 ;
+; LPM_MODULUS            ; 0           ; Untyped                                 ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                 ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                 ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                 ;
+; DEVICE_FAMILY          ; MAX 10      ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                 ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                      ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                      ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                 ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                 ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                 ;
+; CBXI_PARAMETER         ; cntr_u8i    ; Untyped                                 ;
++------------------------+-------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -251,18 +288,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 19                          ;
-; cycloneiii_ff         ; 8                           ;
-;     plain             ; 8                           ;
-; cycloneiii_lcell_comb ; 30                          ;
-;     normal            ; 30                          ;
+; cycloneiii_ff         ; 16                          ;
+;     ENA SLD           ; 16                          ;
+; cycloneiii_lcell_comb ; 18                          ;
+;     arith             ; 15                          ;
+;         2 data inputs ; 15                          ;
+;     normal            ; 3                           ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 22                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.76                        ;
+; Max LUT depth         ; 2.50                        ;
+; Average LUT depth     ; 1.86                        ;
 +-----------------------+-----------------------------+
 
 
@@ -281,7 +318,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Tue Sep 29 10:36:45 2026
+    Info: Processing started: Tue Oct  6 00:45:50 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab_4 -c Lab_4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -293,15 +330,27 @@ Info (12021): Found 1 design units, including 1 entities, in source file t_flipf
     Info (12023): Found entity 1: T_FlipFlop_8Bits File: C:/Advanced_Digital_Systems_Design/Lab_4/T_FlipFlop_8Bits.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file seg7_decoder.v
     Info (12023): Found entity 1: Seg7_Decoder File: C:/Advanced_Digital_Systems_Design/Lab_4/Seg7_Decoder.v Line: 1
-Critical Warning (10846): Verilog HDL Instantiation warning at Lab_4.v(18): instance has no name File: C:/Advanced_Digital_Systems_Design/Lab_4/Lab_4.v Line: 18
-Critical Warning (10846): Verilog HDL Instantiation warning at Lab_4.v(23): instance has no name File: C:/Advanced_Digital_Systems_Design/Lab_4/Lab_4.v Line: 23
-Info (12127): Elaborating entity "Lab_4" for the top level hierarchy
-Info (12128): Elaborating entity "T_FlipFlop_8Bits" for hierarchy "T_FlipFlop_8Bits:my_counter" File: C:/Advanced_Digital_Systems_Design/Lab_4/Lab_4.v Line: 13
-Info (12128): Elaborating entity "T_FlipFlop" for hierarchy "T_FlipFlop_8Bits:my_counter|T_FlipFlop:TFF0" File: C:/Advanced_Digital_Systems_Design/Lab_4/T_FlipFlop_8Bits.v Line: 14
-Info (12128): Elaborating entity "Seg7_Decoder" for hierarchy "Seg7_Decoder:comb_4" File: C:/Advanced_Digital_Systems_Design/Lab_4/Lab_4.v Line: 18
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/Advanced_Digital_Systems_Design/Lab_4/Lab_4.v Line: 4
-    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: C:/Advanced_Digital_Systems_Design/Lab_4/Lab_4.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file counter_16bits.v
+    Info (12023): Found entity 1: Counter_16Bits File: C:/Advanced_Digital_Systems_Design/Lab_4/Counter_16Bits.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lpm_counter_16bits.v
+    Info (12023): Found entity 1: LPM_Counter_16Bits File: C:/Advanced_Digital_Systems_Design/Lab_4/LPM_Counter_16Bits.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file lpm_counter_50mhz.v
+    Info (12023): Found entity 1: LPM_Counter_50MHz File: C:/Advanced_Digital_Systems_Design/Lab_4/LPM_Counter_50MHz.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file second_counter.v
+    Info (12023): Found entity 1: second_counter File: C:/Advanced_Digital_Systems_Design/Lab_4/second_counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file seg7_char_decoder.v
+    Info (12023): Found entity 1: Seg7_Char_Decoder File: C:/Advanced_Digital_Systems_Design/Lab_4/Seg7_Char_Decoder.v Line: 1
+Info (12127): Elaborating entity "LPM_Counter_16Bits" for the top level hierarchy
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "lpm_counter:LPM_COUNTER_component" File: C:/Advanced_Digital_Systems_Design/Lab_4/LPM_Counter_16Bits.v Line: 69
+Info (12130): Elaborated megafunction instantiation "lpm_counter:LPM_COUNTER_component" File: C:/Advanced_Digital_Systems_Design/Lab_4/LPM_Counter_16Bits.v Line: 69
+Info (12133): Instantiated megafunction "lpm_counter:LPM_COUNTER_component" with the following parameter: File: C:/Advanced_Digital_Systems_Design/Lab_4/LPM_Counter_16Bits.v Line: 69
+    Info (12134): Parameter "lpm_direction" = "UP"
+    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
+    Info (12134): Parameter "lpm_width" = "16"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_u8i.tdf
+    Info (12023): Found entity 1: cntr_u8i File: C:/Advanced_Digital_Systems_Design/Lab_4/db/cntr_u8i.tdf Line: 26
+Info (12128): Elaborating entity "cntr_u8i" for hierarchy "lpm_counter:LPM_COUNTER_component|cntr_u8i:auto_generated" File: c:/intelfpga_lite/23.1std/quartus/libraries/megafunctions/lpm_counter.tdf Line: 259
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Golden_Top" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_LITE_Golden_Top -section_id Top was ignored
@@ -330,14 +379,14 @@ Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Golden_Top" -- ent
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE10_LITE_Golden_Top -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 46 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 37 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 27 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 31 warnings
-    Info: Peak virtual memory: 4815 megabytes
-    Info: Processing ended: Tue Sep 29 10:36:51 2026
-    Info: Elapsed time: 00:00:06
+    Info (21061): Implemented 18 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 4818 megabytes
+    Info: Processing ended: Tue Oct  6 00:45:55 2026
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:11
 
 

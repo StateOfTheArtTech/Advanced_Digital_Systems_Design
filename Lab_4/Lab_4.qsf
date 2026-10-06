@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M50DAF484C7G
-set_global_assignment -name TOP_LEVEL_ENTITY Lab_4
+set_global_assignment -name TOP_LEVEL_ENTITY LPM_Counter_16Bits
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:26:57  SEPTEMBER 29, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
@@ -50,9 +50,6 @@ set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name VERILOG_FILE Lab_4.v
 set_global_assignment -name VERILOG_FILE T_FlipFlop.v
 set_global_assignment -name VERILOG_FILE T_FlipFlop_8Bits.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VERILOG_FILE Seg7_Decoder.v
 set_location_assignment PIN_N5 -to ADC_CLK_10
 set_location_assignment PIN_P11 -to MAX10_CLK1_50
@@ -411,4 +408,12 @@ set_location_assignment PIN_AB16 -to GSENSOR_CS_n
 set_location_assignment PIN_Y14 -to GSENSOR_INT1
 set_location_assignment PIN_Y13 -to GSENSOR_INT2
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_LITE_Golden_Top -section_id Top
+set_global_assignment -name VERILOG_FILE Counter_16Bits.v
+set_global_assignment -name QIP_FILE LPM_Counter_16Bits.qip
+set_global_assignment -name QIP_FILE LPM_Counter_50MHz.qip
+set_global_assignment -name VERILOG_FILE second_counter.v
+set_global_assignment -name VERILOG_FILE Seg7_Char_Decoder.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -6,6 +6,9 @@
     <tool name="Pin">
       <a name="appearance" val="classic"/>
     </tool>
+    <tool name="Clock">
+      <a name="facing" val="north"/>
+    </tool>
   </lib>
   <lib desc="#Gates" name="1"/>
   <lib desc="#Plexers" name="2"/>
@@ -42,7 +45,9 @@
       <a name="type" val="output"/>
     </tool>
     <sep/>
-    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="NOT Gate">
+      <a name="facing" val="west"/>
+    </tool>
     <tool lib="1" name="AND Gate"/>
     <tool lib="1" name="OR Gate"/>
     <tool lib="1" name="XOR Gate"/>
@@ -56,22 +61,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="8.0"/>
-    <comp lib="0" loc="(340,200)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="facing" val="west"/>
-      <a name="type" val="output"/>
-    </comp>
-    <comp lib="0" loc="(80,200)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-    </comp>
-    <comp lib="0" loc="(80,220)" name="Clock">
-      <a name="appearance" val="NewPins"/>
-    </comp>
-    <comp loc="(320,200)" name="T_FlipFlop"/>
-    <wire from="(320,200)" to="(340,200)"/>
-    <wire from="(80,200)" to="(100,200)"/>
-    <wire from="(80,220)" to="(100,220)"/>
+    <a name="simulationFrequency" val="64.0"/>
   </circuit>
   <circuit name="T_FlipFlop">
     <a name="appearance" val="logisim_evolution"/>
