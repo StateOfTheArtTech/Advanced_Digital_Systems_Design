@@ -1,0 +1,14 @@
+module Accumulator_8Bit(
+	input [7:0]A, clk, cin
+	output reg [7:0]S, overflow;
+);
+	wire reg [7:0]in, [8:0]out;
+	assign out = {cin, in} + S;
+	always @(posedge clk) begin
+		S = out;
+		in = A;
+		overflow = out[8];
+		
+	end
+
+endmodule

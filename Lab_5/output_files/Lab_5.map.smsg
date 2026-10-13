@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at Array_Multiplier_4Bit.v(5): object "P" differs only in case from object "p" in the same scope File: C:/Advanced_Digital_Systems_Design/Lab_5/Array_Multiplier_4Bit.v Line: 5
+Info (10281): Verilog HDL Declaration information at Array_Multiplier_5Bit.v(6): object "P" differs only in case from object "p" in the same scope File: C:/Advanced_Digital_Systems_Design/Lab_5/Array_Multiplier_5Bit.v Line: 6
