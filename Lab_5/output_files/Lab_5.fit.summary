@@ -1,15 +1,15 @@
-Fitter Status : Successful - Tue Oct 13 06:15:26 2026
+Fitter Status : Successful - Mon Oct 19 21:37:34 2026
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : Lab_5
 Top-level Entity Name : Lab_5
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 68 / 49,760 ( < 1 % )
-    Total combinational functions : 66 / 49,760 ( < 1 % )
+Total logic elements : 45 / 49,760 ( < 1 % )
+    Total combinational functions : 44 / 49,760 ( < 1 % )
     Dedicated logic registers : 20 / 49,760 ( < 1 % )
 Total registers : 20
-Total pins : 36 / 360 ( 10 % )
+Total pins : 21 / 360 ( 6 % )
 Total virtual pins : 0
 Total memory bits : 0 / 1,677,312 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )

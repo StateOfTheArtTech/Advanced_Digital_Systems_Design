@@ -1,22 +1,42 @@
-module Lab_5 (
-   input[9:0]SW,
-   input[1:0]KEY,
-   output[7:0]HEX0,
-   output[7:0]HEX1,
-   output[7:0]HEX2
+module Lab_5(
+   input [9:0] SW,
+   input MAX10_CLK1_50,
+   output [9:0] LEDR
 );
-   wire[9:0]P;
 
-   Array_Multiplier_5Bit mult(
-      .A(SW[9:5]),
-      .B(SW[4:0]),
-      .clk(~KEY[0]),
-      .P(P)
+   wire [4:0] A_in = SW[4:0];
+   wire [4:0] B_in = SW[9:5];
+   wire [9:0] product;
+
+   Tree_Multiplier uut (
+      .clk(MAX10_CLK1_50),
+      .A(A_in),
+      .B(B_in),
+      .P(product)
    );
 
-   Seg7_Decoder seg0(.in(P[3:0]),.out(HEX0));
-   Seg7_Decoder seg1(.in(P[7:4]),.out(HEX1));
-   Seg7_Decoder seg2(.in({2'b0,P[9:8]}),.out(HEX2));
+   assign LEDR = product;
+
+endmodule
+//   input[9:0]SW,
+//   input[1:0]KEY,
+//   output[7:0]HEX0,
+//   output[7:0]HEX1,
+//   output[7:0]HEX2
+	
+//);
+//   wire[9:0]P;
+//
+//   Array_Multiplier_5Bit mult(
+//      .A(SW[9:5]),
+//      .B(SW[4:0]),
+//      .clk(~KEY[0]),
+//      .P(P)
+//   );
+//
+//   Seg7_Decoder seg0(.in(P[3:0]),.out(HEX0));
+//   Seg7_Decoder seg1(.in(P[7:4]),.out(HEX1));
+//   Seg7_Decoder seg2(.in({2'b0,P[9:8]}),.out(HEX2));
 
 
 
@@ -45,4 +65,4 @@ module Lab_5 (
 //      .overflow(LEDR[1])
 //   );
 
-endmodule
+//endmodule

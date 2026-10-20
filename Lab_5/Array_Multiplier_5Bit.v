@@ -21,5 +21,5 @@ module Array_Multiplier_5Bit(
 		reg_A <= A;
 		reg_B <= B;
 		P <= mult_p;
-end
+	end
 endmodule

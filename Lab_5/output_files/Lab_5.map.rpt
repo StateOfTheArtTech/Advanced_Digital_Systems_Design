@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab_5
-Tue Oct 13 06:15:21 2026
+Mon Oct 19 21:37:29 2026
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -14,11 +14,14 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "Seg7_Decoder:seg2"
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
- 13. Analysis & Synthesis Suppressed Messages
+  9. Port Connectivity Checks: "Tree_Multiplier:uut|Full_Adder:fa2_5"
+ 10. Port Connectivity Checks: "Tree_Multiplier:uut|Full_Adder:fa2_4"
+ 11. Port Connectivity Checks: "Tree_Multiplier:uut|Half_Adder:ha2_3"
+ 12. Port Connectivity Checks: "Tree_Multiplier:uut|Half_Adder:ha2_2"
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -45,16 +48,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 13 06:15:21 2026          ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct 19 21:37:29 2026          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Lab_5                                          ;
 ; Top-level Entity Name              ; Lab_5                                          ;
 ; Family                             ; MAX 10                                         ;
-; Total logic elements               ; 75                                             ;
-;     Total combinational functions  ; 65                                             ;
+; Total logic elements               ; 53                                             ;
+;     Total combinational functions  ; 43                                             ;
 ;     Dedicated logic registers      ; 20                                             ;
 ; Total registers                    ; 20                                             ;
-; Total pins                         ; 36                                             ;
+; Total pins                         ; 21                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -167,60 +170,73 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                   ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                     ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
-; ../Lab_3/Seg7_Decoder.v          ; yes             ; User Verilog HDL File  ; C:/Advanced_Digital_Systems_Design/Lab_3/Seg7_Decoder.v          ;         ;
-; Lab_5.v                          ; yes             ; User Verilog HDL File  ; C:/Advanced_Digital_Systems_Design/Lab_5/Lab_5.v                 ;         ;
-; Array_Multiplier_5Bit.v          ; yes             ; User Verilog HDL File  ; C:/Advanced_Digital_Systems_Design/Lab_5/Array_Multiplier_5Bit.v ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
+; Lab_5.v                          ; yes             ; User Verilog HDL File  ; C:/Advanced_Digital_Systems_Design/Lab_5/Lab_5.v           ;         ;
+; Tree_Multiplier.v                ; yes             ; User Verilog HDL File  ; C:/Advanced_Digital_Systems_Design/Lab_5/Tree_Multiplier.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 75           ;
-;                                             ;              ;
-; Total combinational functions               ; 65           ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 14           ;
-;     -- 3 input functions                    ; 20           ;
-;     -- <=2 input functions                  ; 31           ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 45           ;
-;     -- arithmetic mode                      ; 20           ;
-;                                             ;              ;
-; Total registers                             ; 20           ;
-;     -- Dedicated logic registers            ; 20           ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 36           ;
-;                                             ;              ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 20           ;
-; Total fan-out                               ; 267          ;
-; Average fan-out                             ; 1.70         ;
-+---------------------------------------------+--------------+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimated Total logic elements              ; 53                  ;
+;                                             ;                     ;
+; Total combinational functions               ; 43                  ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 24                  ;
+;     -- 3 input functions                    ; 1                   ;
+;     -- <=2 input functions                  ; 18                  ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 43                  ;
+;     -- arithmetic mode                      ; 0                   ;
+;                                             ;                     ;
+; Total registers                             ; 20                  ;
+;     -- Dedicated logic registers            ; 20                  ;
+;     -- I/O registers                        ; 0                   ;
+;                                             ;                     ;
+; I/O pins                                    ; 21                  ;
+;                                             ;                     ;
+; Embedded Multiplier 9-bit elements          ; 0                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
+; Maximum fan-out                             ; 20                  ;
+; Total fan-out                               ; 206                 ;
+; Average fan-out                             ; 1.96                ;
++---------------------------------------------+---------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                             ;
-+---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+-----------------------+--------------+
-; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name               ; Entity Name           ; Library Name ;
-+---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+-----------------------+--------------+
-; |Lab_5                          ; 65 (0)              ; 20 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 36   ; 0            ; 0          ; |Lab_5                            ; Lab_5                 ; work         ;
-;    |Array_Multiplier_5Bit:mult| ; 48 (48)             ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Array_Multiplier_5Bit:mult ; Array_Multiplier_5Bit ; work         ;
-;    |Seg7_Decoder:seg0|          ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Seg7_Decoder:seg0          ; Seg7_Decoder          ; work         ;
-;    |Seg7_Decoder:seg1|          ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Seg7_Decoder:seg1          ; Seg7_Decoder          ; work         ;
-;    |Seg7_Decoder:seg2|          ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Seg7_Decoder:seg2          ; Seg7_Decoder          ; work         ;
-+---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+-----------------------+--------------+
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                          ; Entity Name     ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------+-----------------+--------------+
+; |Lab_5                     ; 43 (0)              ; 20 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 21   ; 0            ; 0          ; |Lab_5                                       ; Lab_5           ; work         ;
+;    |Tree_Multiplier:uut|   ; 43 (18)             ; 20 (20)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut                   ; Tree_Multiplier ; work         ;
+;       |Full_Adder:fa1_2|   ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Full_Adder:fa1_2  ; Full_Adder      ; work         ;
+;       |Full_Adder:fa1_3a|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Full_Adder:fa1_3a ; Full_Adder      ; work         ;
+;       |Full_Adder:fa1_4a|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Full_Adder:fa1_4a ; Full_Adder      ; work         ;
+;       |Full_Adder:fa1_4b|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Full_Adder:fa1_4b ; Full_Adder      ; work         ;
+;       |Full_Adder:fa1_5a|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Full_Adder:fa1_5a ; Full_Adder      ; work         ;
+;       |Full_Adder:fa1_6|   ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Full_Adder:fa1_6  ; Full_Adder      ; work         ;
+;       |Full_Adder:fa2_4|   ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Full_Adder:fa2_4  ; Full_Adder      ; work         ;
+;       |Full_Adder:fa2_5|   ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Full_Adder:fa2_5  ; Full_Adder      ; work         ;
+;       |Full_Adder:fa2_6a|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Full_Adder:fa2_6a ; Full_Adder      ; work         ;
+;       |Full_Adder:fa2_7a|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Full_Adder:fa2_7a ; Full_Adder      ; work         ;
+;       |Full_Adder:fa2_8|   ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Full_Adder:fa2_8  ; Full_Adder      ; work         ;
+;       |Half_Adder:ha1_1|   ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Half_Adder:ha1_1  ; Half_Adder      ; work         ;
+;       |Half_Adder:ha1_5b|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Half_Adder:ha1_5b ; Half_Adder      ; work         ;
+;       |Half_Adder:ha2_2|   ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Half_Adder:ha2_2  ; Half_Adder      ; work         ;
+;       |Half_Adder:ha2_3|   ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Half_Adder:ha2_3  ; Half_Adder      ; work         ;
+;       |Half_Adder:ha2_6b|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Half_Adder:ha2_6b ; Half_Adder      ; work         ;
+;       |Half_Adder:ha2_7b|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Lab_5|Tree_Multiplier:uut|Half_Adder:ha2_7b ; Half_Adder      ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -239,13 +255,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------+
-; Port Connectivity Checks: "Seg7_Decoder:seg2" ;
-+----------+-------+----------+-----------------+
-; Port     ; Type  ; Severity ; Details         ;
-+----------+-------+----------+-----------------+
-; in[3..2] ; Input ; Info     ; Stuck at GND    ;
-+----------+-------+----------+-----------------+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Tree_Multiplier:uut|Full_Adder:fa2_5"                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Tree_Multiplier:uut|Full_Adder:fa2_4"                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Tree_Multiplier:uut|Half_Adder:ha2_3"                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; C    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Tree_Multiplier:uut|Half_Adder:ha2_2"                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; C    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -253,20 +296,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 36                          ;
+; boundary_port         ; 21                          ;
 ; cycloneiii_ff         ; 20                          ;
 ;     plain             ; 20                          ;
-; cycloneiii_lcell_comb ; 69                          ;
-;     arith             ; 20                          ;
-;         3 data inputs ; 20                          ;
-;     normal            ; 49                          ;
-;         0 data inputs ; 5                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 27                          ;
-;         4 data inputs ; 14                          ;
+; cycloneiii_lcell_comb ; 43                          ;
+;     normal            ; 43                          ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 24                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.80                        ;
-; Average LUT depth     ; 3.63                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.35                        ;
 +-----------------------+-----------------------------+
 
 
@@ -285,7 +325,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Tue Oct 13 06:15:15 2026
+    Info: Processing started: Mon Oct 19 21:37:23 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab_5 -c Lab_5
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -301,13 +341,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file array_m
     Info (12023): Found entity 1: Array_Multiplier_4Bit File: C:/Advanced_Digital_Systems_Design/Lab_5/Array_Multiplier_4Bit.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file array_multiplier_5bit.v
     Info (12023): Found entity 1: Array_Multiplier_5Bit File: C:/Advanced_Digital_Systems_Design/Lab_5/Array_Multiplier_5Bit.v Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file tree_multiplier.v
+    Info (12023): Found entity 1: Half_Adder File: C:/Advanced_Digital_Systems_Design/Lab_5/Tree_Multiplier.v Line: 1
+    Info (12023): Found entity 2: Full_Adder File: C:/Advanced_Digital_Systems_Design/Lab_5/Tree_Multiplier.v Line: 11
+    Info (12023): Found entity 3: Tree_Multiplier File: C:/Advanced_Digital_Systems_Design/Lab_5/Tree_Multiplier.v Line: 22
 Info (12127): Elaborating entity "Lab_5" for the top level hierarchy
-Info (12128): Elaborating entity "Array_Multiplier_5Bit" for hierarchy "Array_Multiplier_5Bit:mult" File: C:/Advanced_Digital_Systems_Design/Lab_5/Lab_5.v Line: 15
-Info (12128): Elaborating entity "Seg7_Decoder" for hierarchy "Seg7_Decoder:seg0" File: C:/Advanced_Digital_Systems_Design/Lab_5/Lab_5.v Line: 17
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/Advanced_Digital_Systems_Design/Lab_5/Lab_5.v Line: 4
-    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: C:/Advanced_Digital_Systems_Design/Lab_5/Lab_5.v Line: 5
-    Warning (13410): Pin "HEX2[7]" is stuck at VCC File: C:/Advanced_Digital_Systems_Design/Lab_5/Lab_5.v Line: 7
+Info (12128): Elaborating entity "Tree_Multiplier" for hierarchy "Tree_Multiplier:uut" File: C:/Advanced_Digital_Systems_Design/Lab_5/Lab_5.v Line: 16
+Info (12128): Elaborating entity "Half_Adder" for hierarchy "Tree_Multiplier:uut|Half_Adder:ha1_1" File: C:/Advanced_Digital_Systems_Design/Lab_5/Tree_Multiplier.v Line: 54
+Info (12128): Elaborating entity "Full_Adder" for hierarchy "Tree_Multiplier:uut|Full_Adder:fa1_2" File: C:/Advanced_Digital_Systems_Design/Lab_5/Tree_Multiplier.v Line: 56
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Golden_Top" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_LITE_Golden_Top -section_id Top was ignored
@@ -337,15 +378,13 @@ Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Golden_Top" -- ent
 Info (144001): Generated suppressed messages file C:/Advanced_Digital_Systems_Design/Lab_5/output_files/Lab_5.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Advanced_Digital_Systems_Design/Lab_5/Lab_5.v Line: 3
-Info (21057): Implemented 111 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 24 output pins
-    Info (21061): Implemented 75 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 32 warnings
+Info (21057): Implemented 74 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 53 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
     Info: Peak virtual memory: 4815 megabytes
-    Info: Processing ended: Tue Oct 13 06:15:21 2026
+    Info: Processing ended: Mon Oct 19 21:37:29 2026
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:11
 
