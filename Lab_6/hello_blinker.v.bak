@@ -1,0 +1,10 @@
+module hello_blinker(
+	input ena,
+	input clk,
+	output reg [39:0]HEX
+);
+	always @(posedge clk) begin
+	
+	end
+
+endmodule

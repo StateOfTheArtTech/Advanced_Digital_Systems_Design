@@ -10,16 +10,16 @@ SW[7] => B_in[2].IN1
 SW[8] => B_in[3].IN1
 SW[9] => B_in[4].IN1
 MAX10_CLK1_50 => MAX10_CLK1_50.IN1
-LEDR[0] <= Tree_Multiplier:uut.P
-LEDR[1] <= Tree_Multiplier:uut.P
-LEDR[2] <= Tree_Multiplier:uut.P
-LEDR[3] <= Tree_Multiplier:uut.P
-LEDR[4] <= Tree_Multiplier:uut.P
-LEDR[5] <= Tree_Multiplier:uut.P
-LEDR[6] <= Tree_Multiplier:uut.P
-LEDR[7] <= Tree_Multiplier:uut.P
-LEDR[8] <= Tree_Multiplier:uut.P
-LEDR[9] <= Tree_Multiplier:uut.P
+LEDR[0] << Tree_Multiplier:uut.P
+LEDR[1] << Tree_Multiplier:uut.P
+LEDR[2] << Tree_Multiplier:uut.P
+LEDR[3] << Tree_Multiplier:uut.P
+LEDR[4] << Tree_Multiplier:uut.P
+LEDR[5] << Tree_Multiplier:uut.P
+LEDR[6] << Tree_Multiplier:uut.P
+LEDR[7] << Tree_Multiplier:uut.P
+LEDR[8] << Tree_Multiplier:uut.P
+LEDR[9] << Tree_Multiplier:uut.P
 
 
 |Lab_5|Tree_Multiplier:uut

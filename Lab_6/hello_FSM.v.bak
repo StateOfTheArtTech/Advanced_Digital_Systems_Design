@@ -1,0 +1,7 @@
+module hello_FSM(
+	input clk,
+	input reset,
+	input w,
+	output y
+);
+endmodule
